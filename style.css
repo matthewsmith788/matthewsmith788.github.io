@@ -1,0 +1,35 @@
+/*Font 1*/
+@font-face {
+    font-family: 'Orbitron';
+    src: url('Orbitron-VariableFont_wght.ttf') format('woff2');
+}
+@font-face {
+    font-family: 'Electrolize';
+    src: url(Electrolize-Regular.ttf) format('woff2')
+}
+body {
+    background-color: #27005D;
+    color: #E4F1FF;
+    text-align: center;
+}
+
+.centered-content {
+  margin: 0 auto;
+  /* Additional styles for the centered content */
+}
+h1 {
+    color:#AED2FF;
+    font-family: 'Orbitron', sans-serif;
+    }
+img {
+    border: 5px solid #9400FF;
+}
+p {
+font-family: 'Electrolize', sans-serif;
+}
+h3 {
+font-family: 'Orbitron', sans-serif;
+}
+figcaption {
+    font-family: 'Electrolize', sans-serif; 
+}
