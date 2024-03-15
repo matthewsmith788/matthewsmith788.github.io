@@ -71,6 +71,7 @@
 </head>
 <body>
     <div>Teachable Machine Image Model - p5.js and ml5.js</div>
+    <button onclick="startClassification()">Start</button>
 
     <script type="text/javascript">
         // Classifier Variable
@@ -95,7 +96,9 @@
             video = createCapture(VIDEO);
             video.size(320, 240);
             video.hide();
+        }
 
+        function startClassification() {
             flippedVideo = ml5.flipImage(video);
             // Start classifying
             classifyVideo();
@@ -104,20 +107,19 @@
         function draw() {
             background(0);
             // Draw the video
-            image(flippedVideo, 0, 0);
-
-            // Draw the label
-            fill(255);
-            textSize(16);
-            textAlign(CENTER);
-            text(label, width / 2, height - 4);
+            if (flippedVideo) {
+                image(flippedVideo, 0, 0);
+                // Draw the label
+                fill(255);
+                textSize(16);
+                textAlign(CENTER);
+                text(label, width / 2, height - 4);
+            }
         }
 
         // Get a prediction for the current video frame
         function classifyVideo() {
-            flippedVideo = ml5.flipImage(video)
             classifier.classify(flippedVideo, gotResult);
-            flippedVideo.remove();
         }
 
         // When we get a result
@@ -130,7 +132,7 @@
             // The results are in an array ordered by confidence.
             // console.log(results[0]);
             label = results[0].label;
-            // Classifiy again!
+            // Classify again!
             classifyVideo();
         }
     </script>
