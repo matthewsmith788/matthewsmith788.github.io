@@ -72,6 +72,7 @@
 <body>
     <div>Teachable Machine Image Model - p5.js and ml5.js</div>
     <button onclick="startClassification()">Start</button>
+    <div id="video-container"></div>
 
     <script type="text/javascript">
         // Classifier Variable
@@ -91,10 +92,10 @@
         }
 
         function setup() {
-            createCanvas(320, 260);
+            createCanvas(320, 260).parent('video-container');
             // Create the video
             video = createCapture(VIDEO);
-            video.size(320, 240);
+            video.size(320, 240).parent('video-container');
             video.hide();
         }
 
